@@ -1,0 +1,37 @@
+---
+const texto = "Lisandro";
+const num = 5;
+const obj = {
+  nombre: texto,
+  numero: num,
+  favoritos: ["astro", "css", "js"],
+};
+
+const isVisible = false;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>02.02 Astro basics. Components, routing and data</h1>
+    <h2>Getting data with conditionals</h2>
+    <h2>Visible according state 1</h2>
+    {isVisible && <h3>{obj.favoritos[0].toUpperCase()}</h3>}
+    <h2>Visible according state 2</h2>
+    {
+      isVisible ? (
+        <h3>{obj.favoritos[1].toUpperCase()}</h3>
+      ) : (
+        <h3>{obj.favoritos[2].toUpperCase()}</h3>
+      )
+    }
+    <h2>Visible according state 3</h2>
+    <h3>{obj.favoritos[isVisible ? [1] : [2]].toUpperCase()}</h3>
+  </body>
+</html>

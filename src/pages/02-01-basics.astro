@@ -1,0 +1,27 @@
+---
+const texto = "Lisandro";
+const num = 5;
+const obj = {
+  nombre: texto,
+  numero: num,
+  favoritos: ["astro", "css", "js"],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>02.01 Astro basics. Components, routing and data</h1>
+    <h2>Getting data</h2>
+    <h3>{texto}</h3>
+    <h3>{num}</h3>
+    <h3>{obj.favoritos[2]}</h3>
+    <h3>{obj.favoritos[1].toUpperCase()}</h3>
+  </body>
+</html>

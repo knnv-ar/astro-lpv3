@@ -1,0 +1,28 @@
+---
+const texto = "Lisandro";
+const num = 5;
+const obj = {
+  nombre: texto,
+  numero: num,
+  favoritos: ["astro", "css", "js"],
+};
+
+const isVisible = false;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>02.03 Astro basics. Components, routing and data</h1>
+    <h2>Looping through data</h2>
+    <ul>
+      {obj.favoritos.map((item) => <li>{item}</li>)}
+    </ul>
+  </body>
+</html>
