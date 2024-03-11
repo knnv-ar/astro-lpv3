@@ -1,0 +1,25 @@
+---
+// component imports
+import MainLayout from "../layouts/MainLayout.astro";
+
+const isRed = true;
+---
+
+<MainLayout
+  title="<la-piscine> art galleryk"
+  description="This is <la-piscine> gallery"
+>
+  <p>This is Homepage</p>
+  <p class="big">This is a second paragraph.</p>
+  <p class:list={["big", { red: isRed }]}>This is a third paragraph.</p>
+</MainLayout>
+
+<style>
+  .big {
+    font-size: 4rem;
+  }
+
+  .red {
+    color: red;
+  }
+</style>

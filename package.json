@@ -2,6 +2,9 @@
   "name": "lp-v3",
   "type": "module",
   "version": "0.0.1",
+  "browserlists": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,6 +13,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.4.15"
+    "astro": "^4.4.15",
+    "postcss": "^8.4.35",
+    "postcss-preset-env": "^9.5.0"
   }
 }
