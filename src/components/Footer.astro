@@ -1,0 +1,17 @@
+---
+const { title, description } = Astro.props;
+---
+
+<footer>
+  <small
+    >Copyright &copy; 2020-<span id="copyright"></span> | All rights reserved</small
+  >
+  <br />
+  <small>Universidad Nacional de las Artes</small>
+</footer>
+
+<script>
+  document.querySelector("#copyright").textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
