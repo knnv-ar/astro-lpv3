@@ -1,0 +1,31 @@
+---
+// component imports
+import Link from "../components/Link.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="Page Not Found"
+  description="Sorry, we didn't found the requested page"
+>
+  <div
+    class="container"
+    style={{
+      display: "grid",
+      placeItems: "center",
+      textAlign: "center",
+      gap: "var(--space-sm)",
+    }}
+  >
+    <div>
+      <h1 class="h1">Help me Obi Wan Kenobi...</h1>
+      <p>It seems that something went wrong!</p>
+      <Link
+        href="/"
+        style="secondary"
+        text="Go Home"
+        icon={{ name: "mdi:home-import-outline", side: "right" }}
+      />
+    </div>
+  </div>
+</MainLayout>

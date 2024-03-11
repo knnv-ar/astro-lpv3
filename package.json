@@ -17,5 +17,8 @@
     "astro-icon": "^1.1.0",
     "postcss": "^8.4.35",
     "postcss-preset-env": "^9.5.0"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.64"
   }
 }
