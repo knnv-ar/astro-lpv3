@@ -1,12 +1,9 @@
 ---
+// components import
+import PostHeader from "../components/PostHeader.astro";
+
 // layout import
 import MainLayout from "./MainLayout.astro";
-
-// image library import
-import { Image } from "astro:assets";
-
-// utils import
-import { slugify, formatDate } from "../js/utils";
 
 const { frontmatter } = Astro.props;
 
@@ -14,30 +11,8 @@ const { title, description, date, category, author, image } = frontmatter;
 ---
 
 <MainLayout title={title} description={description}>
-  <header>
-    <div class="container">
-      <small>
-        <a href={`/category/${slugify(category)}/`} class="badge">{category}</a>
-      </small>
-      <h1 class="h2">{title}</h1>
-      <p>
-        by <a href={`/author/${slugify(author)}/`}>{author}</a> &bull; {
-          formatDate(date)
-        }
-      </p>
-    </div>
-    <Image
-      src={image.src}
-      alt={image.alt}
-      width="1200"
-      height="600"
-      format="avif"
-      fit="cover"
-      quality={80}
-      aspectRatio="1:1"
-      class="hero-image"
-    />
-  </header>
+  <PostHeader {title} {description} {date} {category} {author} {image} />
+
   <div class="post-content">
     <div class="content">
       <slot />

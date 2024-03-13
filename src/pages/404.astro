@@ -2,6 +2,11 @@
 // component imports
 import Link from "../components/Link.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+// image library import
+import { Image } from "astro:assets";
+
+import fourOhFour from "../assets/404.png";
 ---
 
 <MainLayout
@@ -18,6 +23,15 @@ import MainLayout from "../layouts/MainLayout.astro";
     }}
   >
     <div>
+      <Image
+        src={fourOhFour}
+        alt=""
+        width={700}
+        height={700}
+        format="webp"
+        quality={"high"}
+        class="fourohfour"
+      />
       <h1 class="h1">Help me Obi Wan Kenobi...</h1>
       <p>It seems that something went wrong!</p>
       <Link
