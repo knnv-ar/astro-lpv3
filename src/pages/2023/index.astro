@@ -1,21 +1,27 @@
 ---
 // component imports
 import MainLayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+const allArtworks = await Astro.glob("./**/*.{md,mdx}");
 ---
 
 <MainLayout
   title="<la-piscine> 2023 Exposition"
   description="AM1 2023 Exposition"
 >
-  <ul>
-    <li>
-      <a href="./post-01">Post 01</a>
-    </li>
-    <li>
-      <a href="./post-02">Post 02</a>
-    </li>
-    <li>
-      <a href="./post-03">Post 03</a>
-    </li>
-  </ul>
+  <section class="container" aria-label="New Expo Artworks">
+    <h1 class="h1">New Expo Artworks</h1>
+    <div class="post-container">
+      {
+        allArtworks.map((artwork) => (
+          <PostCard
+            frontmatter={artwork.frontmatter}
+            url={artwork.url}
+            tagType="h2"
+          />
+        ))
+      }
+    </div>
+  </section>
 </MainLayout>

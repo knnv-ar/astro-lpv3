@@ -1,7 +1,16 @@
 ---
-layout: post
-title: "Desarrendo"
+layout: "../../../layouts/ExpoArtworkLayout.astro"
+title: Desarrendo
 date: 2023-11-12
+author: Martina Mainero
+image: {
+  src: "./images/post-01.png",
+  alt: "Desarrendo"
+}
+description: Bla bla bla
+draft: false
+category: Reference Docs
+
 thumbnail: thumbnail.png
 dependencies:
   - p5
@@ -11,6 +20,7 @@ dependencies:
 <div id="div-sketch">
   <script type="text/javascript" src="sketch.js"></script>
 </div>
+
 _Martina Mainero_, 2022.
 
 # **DESARRENDO**
