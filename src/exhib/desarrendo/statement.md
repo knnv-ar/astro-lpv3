@@ -1,15 +1,15 @@
 ---
-layout: "../../../layouts/ExpoArtworkLayout.astro"
+layout: "../../layouts/ExpoArtworkLayout.astro"
 title: Desarrendo
 date: 2023-11-12
 author: Martina Mainero
 image: {
-  src: "./images/post-01.png",
+  src: "./thumbnail.png",
   alt: "Desarrendo"
 }
 description: Bla bla bla
 draft: false
-category: Reference Docs
+category: 2023F
 
 thumbnail: thumbnail.png
 dependencies:
