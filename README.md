@@ -45,3 +45,17 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+---
+
+[Intenationalization i18n](https://docs.astro.build/en/guides/internationalization/)
+
+[Add i18n features](https://docs.astro.build/en/recipes/i18n/#recipe)
+
+[Error reference](https://docs.astro.build/en/reference/error-reference/)
+
+[Keystatic & Astro](https://docs.astro.build/en/guides/cms/keystatic/#displaying-a-collection-list)
+
+[Adding Keystatic to an Astro project](https://keystatic.com/docs/installation-astro)
+
+[Markdoc](https://markdoc.dev/)

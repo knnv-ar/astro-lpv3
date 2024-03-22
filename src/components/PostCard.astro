@@ -26,7 +26,6 @@ const { title, description, date, image, author, category } = frontmatter;
       width="400"
       height="250"
       format="webp"
-      fit="cover"
       quality={80}
       aspectRatio="4:1"
     />
@@ -37,9 +36,9 @@ const { title, description, date, image, author, category } = frontmatter;
         <a href={url}>{title}</a>
       </Tag>
       <small>
-        <a href={url}>3 by </a><a href={`/author/${slugify(author)}/`}
-          >{author}</a
-        > &bull; {formatDate(date)}
+        by <a href={`/author/${slugify(author)}/`}>{author}</a> &bull; {
+          formatDate(date)
+        }
       </small>
     </div>
     <p>{description}</p>

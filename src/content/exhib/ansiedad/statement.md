@@ -1,20 +1,15 @@
 ---
-layout: "../../layouts/ExpoArtworkLayout.astro"
 title: Ansiedad
 date: 2022-10-09
 author: Nicolás Buffarini
 image: {
-  src: "./thumbnail.png",
-  alt: "Ansiedad"
+  src: "/images/ansiedad.png",
+  alt: "Ansiedad",
 }
 description: Bla bla bla
-draft: false
-category: 2023F
-
-thumbnail: thumbnail.png
-dependencies:
-  - p5
-  - p5.sound
+draft: true
+category: 2023 (First semester)
+dependencies: ["p5", "p5.sound"]
 ---
 
 <div id="div-sketch">

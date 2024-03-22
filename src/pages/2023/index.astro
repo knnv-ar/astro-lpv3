@@ -1,9 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 // component imports
 import MainLayout from "@layouts/MainLayout.astro";
 import PostCard from "@components/PostCard.astro";
 
-const allArtworks = await Astro.glob("/src/exhib/**/*.{md,mdx}");
+//const allArtworks = await Astro.glob("@exhib/**/*.{md,mdx}");
+// Get all `src/content/exhib/` entries
+const allArtworks = await getCollection("exhib");
+
+//<PostCard frontmatter={artwork.data} url={artwork.url} tagType="h2" />
 ---
 
 <MainLayout
@@ -11,13 +16,13 @@ const allArtworks = await Astro.glob("/src/exhib/**/*.{md,mdx}");
   description="AM1 2023 Exposition"
 >
   <section class="container" aria-label="New Expo Artworks">
-    <h1 class="h1">New Expo Artworks</h1>
+    <h1 class="h1">New Exhibition Artworks</h1>
     <div class="post-container">
       {
-        allArtworks.map((artwork) => (
+        allArtworks.map((artwork: any) => (
           <PostCard
-            frontmatter={artwork.frontmatter}
-            url={artwork.url}
+            frontmatter={artwork.data}
+            url={`/posts/${artwork.slug}/`}
             tagType="h2"
           />
         ))

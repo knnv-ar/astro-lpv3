@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import ExpoArtworkLayout from "../../layouts/ExpoArtworkLayout.astro";
+
+export async function getStaticPaths() {
+  const exhibEntries = await getCollection("exhibitionCollection");
+  return exhibEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ExpoArtworkLayout frontmatter={entry.data}>
+  <Content />
+</ExpoArtworkLayout>
