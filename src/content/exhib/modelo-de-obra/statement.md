@@ -3,7 +3,7 @@ title: Modelo de obra
 date: 2022-10-09
 author: Raúl F. Lacabanne
 image: {
-  src: "/images/modelo-de-obra.png",
+  src: "/images/thumbnail.png",
   alt: "Modelo de obra",
 }
 description: Bla bla bla

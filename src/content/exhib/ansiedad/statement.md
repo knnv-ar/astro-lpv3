@@ -3,7 +3,7 @@ title: Ansiedad
 date: 2022-10-09
 author: Nicolás Buffarini
 image: {
-  src: "/images/ansiedad.png",
+  src: "/images/thumbnail.png",
   alt: "Ansiedad",
 }
 description: Bla bla bla

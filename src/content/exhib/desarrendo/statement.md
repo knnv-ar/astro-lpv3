@@ -3,7 +3,7 @@ title: Desarrendo
 date: 2023-11-12
 author: Martina Mainero
 image: {
-  src: "/images/desarrendo.png",
+  src: "/images/thumbnail.png",
   alt: "Desarrendo"
 }
 description: Bla bla bla
