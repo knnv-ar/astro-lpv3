@@ -2,21 +2,21 @@
 import { z, defineCollection } from "astro:content";
 // Define a `type` and `schema` for each collection
 const exhibitionCollection = defineCollection({
-    type: 'content',
-    schema: z.object({
+  type: 'content',
+    schema: ({ image }) => z.object({
       title: z.string(),
       publicationDate: z.date(),
       author: z.string(),
-      image: z.object({
-        src: z.string(),
-        alt: z.string()
+      imageSrc: image().refine((img) => img.width === 360, {
+        message: "Cover image must be exactly 360 pixels wide!",
       }),
+      imageAlt: z.string(),
       description: z.string(),
       category: z.array(z.string()),
-      dependecies: z.array(z.string()),
+      dependencies: z.array(z.string()),
     })
 });
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-  posts: exhibitionCollection,
+  exhib: exhibitionCollection,
 };

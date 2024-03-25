@@ -12,7 +12,15 @@ const { frontmatter, url, tagType } = Astro.props;
 
 const Tag = tagType;
 
-const { title, description, date, image, author, category } = frontmatter;
+const {
+  title,
+  description,
+  publicationDate,
+  imageSrc,
+  imageAlt,
+  author,
+  category,
+} = frontmatter;
 ---
 
 <article class="card">
@@ -21,13 +29,12 @@ const { title, description, date, image, author, category } = frontmatter;
   </small>
   <a href={url} aria-hidden="true" tabindex="-1">
     <Image
-      src={image.src}
-      alt={image.alt}
+      src={imageSrc}
+      alt={imageAlt}
       width="400"
       height="250"
       format="webp"
       quality={80}
-      aspectRatio="4:1"
     />
   </a>
   <div class="content">
@@ -37,7 +44,7 @@ const { title, description, date, image, author, category } = frontmatter;
       </Tag>
       <small>
         by <a href={`/author/${slugify(author)}/`}>{author}</a> &bull; {
-          formatDate(date)
+          formatDate(publicationDate)
         }
       </small>
     </div>

@@ -1,14 +1,12 @@
 ---
 title: Modelo de obra
-date: 2022-10-09
+publicationDate: 2022-10-09
 author: Raúl F. Lacabanne
-image: {
-  src: "/images/thumbnail.png",
-  alt: "Modelo de obra",
-}
+imageSrc: "./thumbnail.png"
+imageAlt: "Modelo de obra"
 description: Bla bla bla
 draft: true
-category: 2022 (First semester)
+category: ["2023 (First semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 

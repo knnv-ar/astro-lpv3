@@ -1,14 +1,12 @@
 ---
 title: Ansiedad
-date: 2022-10-09
+publicationDate: 2023-11-12
 author: Nicolás Buffarini
-image: {
-  src: "/images/thumbnail.png",
-  alt: "Ansiedad",
-}
+imageSrc: "./thumbnail.png"
+imageAlt: "Ansiedad"
 description: Bla bla bla
 draft: true
-category: 2023 (First semester)
+category: ["2023 (First semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 
