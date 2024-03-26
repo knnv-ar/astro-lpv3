@@ -3,7 +3,6 @@ title: Eclipse
 publicationDate: 2023-11-12
 author: Julian Gonzalez Garrido
 imageSrc: "./thumbnail.png"
-imageAlt: "Eclipse"
 description: Bla bla bla
 draft: false
 category: ["2023 (First semester)"]

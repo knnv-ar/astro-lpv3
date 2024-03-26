@@ -3,7 +3,6 @@ title: Desarrendo
 publicationDate: 2023-11-12
 author: Martina Mainero
 imageSrc: "./thumbnail.png"
-imageAlt: "Desarrendo"
 description: Bla bla bla
 draft: false
 category: ["2023 (First semester)"]

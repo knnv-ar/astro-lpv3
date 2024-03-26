@@ -3,7 +3,6 @@ title: Advent Molnar
 publicationDate: 2022-10-09
 author: Camila Merli
 imageSrc: "./thumbnail.png"
-imageAlt: "Advent Molnar"
 description: Bla bla bla
 draft: true
 category: ["2022 (First semester)"]

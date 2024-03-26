@@ -3,7 +3,6 @@ title: Ansiedad
 publicationDate: 2023-11-12
 author: Nicolás Buffarini
 imageSrc: "./thumbnail.png"
-imageAlt: "Ansiedad"
 description: Bla bla bla
 draft: true
 category: ["2023 (First semester)"]

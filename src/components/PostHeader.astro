@@ -5,15 +5,8 @@ import { Image } from "astro:assets";
 // utils import
 import { slugify, formatDate } from "@/js/utils";
 
-const {
-  title,
-  description,
-  publicationDate,
-  category,
-  author,
-  imageSrc,
-  imageAlt,
-} = Astro.props;
+const { title, description, publicationDate, category, author, imageSrc } =
+  Astro.props;
 ---
 
 <header>
@@ -30,7 +23,7 @@ const {
   </div>
   <Image
     src={imageSrc}
-    alt={imageAlt}
+    alt=""
     width="1200"
     height="600"
     format="webp"

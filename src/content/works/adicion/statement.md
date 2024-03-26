@@ -3,7 +3,6 @@ title: Adición
 publicationDate: 2022-10-09
 author: Sofia Anabel Duro
 imageSrc: "./thumbnail.png"
-imageAlt: "Adición"
 description: Bla bla bla
 draft: true
 category: ["2022 (First semester)"]

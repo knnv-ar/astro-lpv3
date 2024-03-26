@@ -3,7 +3,6 @@ title: Modelo de obra
 publicationDate: 2022-10-09
 author: Raúl F. Lacabanne
 imageSrc: "./thumbnail.png"
-imageAlt: "Modelo de obra"
 description: Bla bla bla
 draft: true
 category: ["2023 (First semester)"]

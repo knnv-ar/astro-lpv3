@@ -3,7 +3,6 @@ title: artefacto
 publicationDate: 2022-10-09
 author: Silvina Lord
 imageSrc: "./thumbnail.png"
-imageAlt: "artefacto"
 description: Bla bla bla
 draft: true
 category: ["2022 (First semester)"]

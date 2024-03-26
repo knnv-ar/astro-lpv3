@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import ExpoArtworkLayout from "@layouts/ExpoArtworkLayout.astro";
 
 export async function getStaticPaths() {
-  const exhibEntries = await getCollection("exhib");
+  const exhibEntries = await getCollection("works");
   return exhibEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },

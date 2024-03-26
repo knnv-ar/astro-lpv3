@@ -10,7 +10,6 @@ const exhibitionCollection = defineCollection({
       imageSrc: image().refine((img) => img.width === 360, {
         message: "Cover image must be exactly 360 pixels wide!",
       }),
-      imageAlt: z.string(),
       description: z.string(),
       category: z.array(z.string()),
       dependencies: z.array(z.string()),
@@ -18,5 +17,5 @@ const exhibitionCollection = defineCollection({
 });
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-  exhib: exhibitionCollection,
+  works: exhibitionCollection,
 };
