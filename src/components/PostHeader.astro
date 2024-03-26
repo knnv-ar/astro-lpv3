@@ -3,9 +3,17 @@
 import { Image } from "astro:assets";
 
 // utils import
-import { slugify, formatDate } from "../js/utils";
+import { slugify, formatDate } from "@/js/utils";
 
-const { category, title, author, date, image } = Astro.props;
+const {
+  title,
+  description,
+  publicationDate,
+  category,
+  author,
+  imageSrc,
+  imageAlt,
+} = Astro.props;
 ---
 
 <header>
@@ -16,17 +24,18 @@ const { category, title, author, date, image } = Astro.props;
     <h1 class="h2">{title}</h1>
     <p>
       by <a href={`/author/${slugify(author)}/`}>{author}</a> &bull; {
-        formatDate(date)
+        formatDate(publicationDate)
       }
     </p>
   </div>
   <Image
-    src={image.src}
-    alt={image.alt}
+    src={imageSrc}
+    alt={imageAlt}
     width="1200"
     height="600"
-    format="avif"
+    format="webp"
     quality={80}
+    aspectRatio="5:2"
     class="hero-image"
   />
 </header>

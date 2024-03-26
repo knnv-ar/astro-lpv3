@@ -10,6 +10,7 @@
       "@assets/*": ["src/assets/*"],
       "@content/*": ["src/content/*"],
       "@exhib/*": ["src/content/exhib/*"],
+      "@styles/*": ["src/styles/*"],
     },
     "strictNullChecks": true,
     "allowJs": true
