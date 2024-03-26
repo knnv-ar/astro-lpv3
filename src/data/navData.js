@@ -1,9 +1,5 @@
 const navData = [
   {
-    name: "2023",
-    path: "/2023/",
-  },
-  {
     name: "Works",
     path: "/works/",
   },

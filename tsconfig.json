@@ -11,6 +11,8 @@
       "@content/*": ["src/content/*"],
       "@exhib/*": ["src/content/exhib/*"],
       "@styles/*": ["src/styles/*"],
+      "@js/*": ["src/js/*"],
+      "@data/*": ["src/data/*"],
     },
     "strictNullChecks": true,
     "allowJs": true
