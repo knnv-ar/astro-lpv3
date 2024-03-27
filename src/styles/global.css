@@ -179,7 +179,7 @@ button {
 @custom-media --xl (width >=1440px);
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
   grid-template-rows: auto 1fr auto;
