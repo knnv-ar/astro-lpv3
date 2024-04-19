@@ -1,0 +1,24 @@
+---
+const { ancho, alto, urlSketch, version } = Astro.props;
+
+const cdnVer =
+  "https://cdnjs.cloudflare.com/ajax/libs/p5.js/" + version + "/p5.js";
+
+const pagePathname = Astro.url.pathname;
+const newPathname = pagePathname.replace(/\/statement\/$/, "/");
+const newPathnameFile = newPathname + "sketch.js";
+//console.log(newPathnameFile);
+---
+
+<div style={{ width: `${ancho}px`, height: `${alto}px` }} id="div-sketch">
+  <script src={cdnVer}></script>
+  <script is:inline type="text/javascript" src={urlSketch}></script>
+  {newPathnameFile}
+</div>
+
+<style>
+  div {
+    background-color: salmon;
+    margin: 0 auto;
+  }
+</style>

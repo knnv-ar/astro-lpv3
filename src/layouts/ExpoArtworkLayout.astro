@@ -3,7 +3,7 @@
 import PostHeader from "@components/PostHeader.astro";
 
 // layout import
-import MainLayout from "@layouts/MainLayout.astro";
+import WorkLayout from "@layouts/WorkLayout.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -11,7 +11,8 @@ const { title, description, publicationDate, category, author, imageSrc } =
   frontmatter;
 ---
 
-<MainLayout title={title} description={description}>
+<main></main>
+<WorkLayout title={title} description={description}>
   <PostHeader
     {title}
     {description}
@@ -27,4 +28,4 @@ const { title, description, publicationDate, category, author, imageSrc } =
     </div>
     <div class="sidebar"></div>
   </div>
-</MainLayout>
+</WorkLayout>
