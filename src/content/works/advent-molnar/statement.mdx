@@ -1,17 +1,19 @@
 ---
 title: Advent Molnar
+folderName: advent-molnar
 publicationDate: 2022-10-09
 author: Camila Merli
-imageSrc: "./thumbnail.png"
+imageSrc: ./thumbnail.png
 description: Bla bla bla
 draft: true
 category: ["2022 (First semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 
-<div id="div-sketch">
-  <script type="text/javascript" src="sketch.js"></script>
-</div>
+import boceto from '../advent-molnar/sketch.js?url';
+import Lienzo from '@components/Lienzo.astro';
+
+<Lienzo urlSketch={ boceto } ancho="512" alto="512" version="1.9.2" />
 
 _Camila Merli_, 2022.
 

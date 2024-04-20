@@ -1,17 +1,19 @@
 ---
 title: Eclipse
+folderName: eclipse
 publicationDate: 2023-11-12
 author: Julian Gonzalez Garrido
-imageSrc: "./thumbnail.png"
+imageSrc: ./thumbnail.png
 description: Bla bla bla
 draft: false
 category: ["2023 (First semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 
-<div id="div-sketch">
-  <script type="text/javascript" src="sketch.js"></script>
-</div>
+import boceto from '../eclipse/sketch.js?url';
+import Lienzo from '@components/Lienzo.astro';
+
+<Lienzo urlSketch={ boceto } ancho="400" alto="400" version="1.9.2" />
 
 _Julian Gonzalez Garrido_, 2023.
 

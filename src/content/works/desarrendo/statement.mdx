@@ -1,17 +1,19 @@
 ---
 title: Desarrendo
+folderName: desarrendo
 publicationDate: 2023-11-12
 author: Martina Mainero
-imageSrc: "./thumbnail.png"
+imageSrc: ./thumbnail.png
 description: Bla bla bla
 draft: false
 category: ["2023 (First semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 
-<div id="div-sketch">
-  <script type="text/javascript" src="sketch.js"></script>
-</div>
+import boceto from '../desarrendo/sketch.js?url';
+import Lienzo from '@components/Lienzo.astro';
+
+<Lienzo urlSketch={ boceto } ancho="512" alto="512" version="1.9.2" />
 
 _Martina Mainero_, 2022.
 

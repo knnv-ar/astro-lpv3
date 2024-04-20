@@ -1,17 +1,19 @@
 ---
 title: Modelo de obra
+folderName: modelo-de-obra
 publicationDate: 2022-10-09
 author: Raúl F. Lacabanne
-imageSrc: "./thumbnail.png"
+imageSrc: ./thumbnail.png
 description: Bla bla bla
 draft: true
 category: ["2023 (First semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 
-<div id="div-sketch">
-  <script type="text/javascript" src="sketch.js"></script>
-</div>
+import boceto from '../modelo-de-obra/sketch.js?url';
+import Lienzo from '@components/Lienzo.astro';
+
+<Lienzo urlSketch={ boceto } ancho="512" alto="512" version="1.9.2" />
 
 _Nombre y Apellido del/la autor/a_, 2022.
 

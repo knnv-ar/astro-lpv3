@@ -1,19 +1,26 @@
 ---
 const { ancho, alto, urlSketch, version } = Astro.props;
 
-const cdnVer =
-  "https://cdnjs.cloudflare.com/ajax/libs/p5.js/" + version + "/p5.js";
+const p5CdnVer =
+  "https://cdnjs.cloudflare.com/ajax/libs/p5.js/" + version + "/p5.min.js";
 
-const pagePathname = Astro.url.pathname;
-const newPathname = pagePathname.replace(/\/statement\/$/, "/");
-const newPathnameFile = newPathname + "sketch.js";
+const p5SoundCdnVer =
+  "https://cdnjs.cloudflare.com/ajax/libs/p5.js/" +
+  version +
+  "/addons/p5.sound.min.js";
+//const pagePathname = Astro.url.pathname;
+//const newPathname = pagePathname.replace(/\/statement\/$/, "/");
+//const newPathnameFile = newPathname + "sketch.js";
 //console.log(newPathnameFile);
+// const newPathname = pagePathname
+//   .replace("/works", "..")
+//   .replace("/statement/", "/sketch.js?url");
 ---
 
 <div style={{ width: `${ancho}px`, height: `${alto}px` }} id="div-sketch">
-  <script src={cdnVer}></script>
+  <script src={p5CdnVer}></script>
+  <script src={p5SoundCdnVer}></script>
   <script is:inline type="text/javascript" src={urlSketch}></script>
-  {newPathnameFile}
 </div>
 
 <style>
