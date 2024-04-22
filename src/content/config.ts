@@ -7,12 +7,12 @@ const exhibitionCollection = defineCollection({
     z.object({
       title: z.string(),
       folderName: z.string(),
+      description: z.string(),
       publicationDate: z.date(),
       author: z.string(),
       imageSrc: image().refine((img) => img.width === 360, {
         message: "Cover image must be exactly 360 pixels wide!",
       }),
-      description: z.string(),
       category: z.array(z.string()),
       dependencies: z.array(z.string()),
     }),

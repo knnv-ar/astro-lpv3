@@ -201,4 +201,76 @@ const { frontmatter } = Astro.props;
 </BaseLayout>
 ```
 
-------------------------------------------------------------
+---
+
+_Oldie:_
+
+```frontmatter
+---
+title: Adición
+folderName: adicion
+publicationDate: 2022-10-09
+author: Sofia Anabel Duro
+imageSrc: ./thumbnail.png
+description: Bla bla bla
+draft: true
+category: ['2022 (First semester)']
+dependencies: ['p5', 'p5.sound']
+---
+```
+
+import boceto from '../adicion/sketch.js?url';
+
+import Lienzo from '@components/Lienzo.astro';
+
+<Lienzo urlSketch={ boceto } ancho="512" alto="512" version="1.9.2" />
+
+export function Thing() {
+  return <>World</>
+}
+
+# Hello <Thing />
+
+# ../{ frontmatter.folderName }/sketch.js?url
+
+El sig no funciona... 
+
+Lienzo urlSketch={boceto} ancho="512" alto="512" version="1.9.2"
+
+El siguiente sí funciona...
+
+Lienzo urlSketch="/testing/sketch.js" ancho="512" alto="512" version="1.9.2"
+
+_Sofia Anabel Duro_, 2022.
+
+**Adición**
+
+"Adición", cómo su nombre lo indica, busca que el espectador sume elementos e interaccione con el entorno en pos de encontrar mediante diferentes formas, texturas y movimientos, un viaje a través de sus propia creatividad, siendo la obra final definida por las decisiones que éste tome al manipularla. Cómo elemento principal e inmutable, se encuentra una representación figurativa de una computadora.
+
+---
+_WIP:_
+
+---
+```frontmatter
+---
+title: Adición
+folderName: adicion
+publicationDate: 2022-10-09
+author: Sofia Anabel Duro
+imageSrc: ./thumbnail.png
+description: Bla bla bla
+draft: true
+category: ['2022 (First semester)']
+dependencies: ['p5', 'p5.sound']
+---
+```
+
+import boceto from '../adicion/sketch.js?url';
+
+import Lienzo from '@components/Lienzo.astro';
+
+<Lienzo urlSketch={ boceto } ancho="512" alto="512" version="1.9.2" />
+
+_Sofia Anabel Duro_, 2022.
+
+**Adición**
