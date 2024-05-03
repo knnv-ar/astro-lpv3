@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+
+// layouts
+import MainLayout from "@/layouts/MainLayout.astro";
+import PostCard from "@/components/PostCard.astro";
+
+// utils
+import { slugify, formatExhibWorks } from "@/js/utils";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { category: slugify("2022 (First semester)") },
+      props: { name: "2022 (First semester)" },
+    },
+    {
+      params: { category: slugify("2023 (First semester)") },
+      props: { name: "2023 (First semester)" },
+    },
+  ];
+}
+
+const { category } = Astro.params;
+const { name } = Astro.props;
+
+const allArtworks = await getCollection("works");
+const formatedWorks = formatExhibWorks(allArtworks);
+const catWorks = formatedWorks.filter(
+  (artwork) => slugify(artwork.data.category) === category
+);
+---
+
+<MainLayout title={name} description="AM1 2023 Exposition">
+  <section class="container" aria-label={`Works about ${name}`}>
+    <h1 class="h1">Artworks done in <span>{name}</span></h1>
+    <div class="post-container">
+      <!-- {
+        allArtworks.map((artwork) => (
+          <PostCard
+            frontmatter={artwork.data}
+            url={`/works/${artwork.slug}/`}
+            tagType="h2"
+          />
+        )) 
+      }-->
+    </div>
+  </section>
+</MainLayout>

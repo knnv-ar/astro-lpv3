@@ -13,6 +13,7 @@ const exhibitionCollection = defineCollection({
       imageSrc: image().refine((img) => img.width === 360, {
         message: "Cover image must be exactly 360 pixels wide!",
       }),
+      draft: z.boolean(),
       category: z.array(z.string()),
       dependencies: z.array(z.string()),
     }),

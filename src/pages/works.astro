@@ -5,10 +5,14 @@ import { getCollection } from "astro:content";
 import MainLayout from "@layouts/MainLayout.astro";
 import PostCard from "@components/PostCard.astro";
 
+import { formatExhibWorks } from "../js/utils";
+
 //const allArtworks = await Astro.glob("@exhib/**/*.{md,mdx}");
 // Get all `src/content/exhib/` entries
-const allArtworks = await getCollection("works");
-
+const allArtworks = await getCollection("works", ({ data }) => {
+  return !data.draft && data.publicationDate < new Date();
+});
+const formatedWorks = formatExhibWorks(allArtworks);
 //<PostCard frontmatter={artwork.data} url={artwork.url} tagType="h2" />
 ---
 
