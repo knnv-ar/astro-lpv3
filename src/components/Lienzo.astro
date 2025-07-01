@@ -1,4 +1,5 @@
 ---
+// [INICIO del NUEVO archivo Lienzo.astro]
 const { ancho, alto, urlSketch, version, assets } = Astro.props;
 const p5CdnVer =
   "https://cdnjs.cloudflare.com/ajax/libs/p5.js/" + version + "/p5.min.js";
@@ -8,19 +9,22 @@ const p5SoundCdnVer =
   "/addons/p5.sound.min.js";
 
 // Serializar los assets para pasarlos al cliente
-const assetsJson = assets ? JSON.stringify(assets) : '{}';
+const assetsJson = assets ? JSON.stringify(assets) : null;
 ---
 
 <div style={{ width: `${ancho}px`, height: `${alto}px` }} id="div-sketch">
   <script is:inline src={p5CdnVer}></script>
   <script is:inline src={p5SoundCdnVer}></script>
-  
-  <!-- Script para hacer los assets disponibles globalmente -->
-  <script is:inline define:vars={{ assetsJson }}>
-    // Hacer los assets disponibles globalmente para p5.js
-    window.SKETCH_ASSETS = JSON.parse(assetsJson);
-  </script>
-  
+
+  {
+    assetsJson && (
+      <script is:inline define:vars={{ assetsJson }}>
+        // Hacer los assets disponibles globalmente para p5.js
+        window.SKETCH_ASSETS = JSON.parse(assetsJson);
+      </script>
+    )
+  }
+
   <script is:inline type="text/javascript" src={urlSketch}></script>
 </div>
 
