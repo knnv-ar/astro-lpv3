@@ -9,24 +9,21 @@ let texturaActual2;
 let texturaActual3;
 let texturaActual4;
 let audio;
-let audio1;
 let negro;
 let blanco;
 let tam = 40;
 let posy = 'y';
 let posx = 'x';
 
+
 function preload() {
-  // Obtener los assets del objeto global
-  const assets = window.SKETCH_ASSETS || {};
-  
-  // Usar los assets importados o fallback a rutas relativas
-  cielo = createVideo(assets.cielo || '../visual/cielo.mp4');
-  pasto = createVideo(assets.pasto || '../visual/pasto.mp4');
-  negro = loadImage(assets.negro || '../visual/negro.jpg');
-  blanco = loadImage(assets.blanco || '../visual/blanco.png');
-  audio = loadSound(assets.audio || '../audio.mp3');
-  audio1 = loadSound(assets.audio1 || '../audio1.mp3');
+  cielo = createVideo('../visual/cielo.mp4');
+  pasto = createVideo('../visual/pasto.mp4');
+  negro = loadImage('../visual/negro.jpg');
+  blanco = loadImage('../visual/blanco.png');
+  audio = loadSound('../audio.mp3');
+  audio1 = loadSound('../audio1.mp3');
+
 }
 
 function setup() {
@@ -41,29 +38,27 @@ function setup() {
   pasto.hide();
   pasto.loop();
 
-  // Obtener los assets del objeto global para los videos de elementos
-  const assets = window.SKETCH_ASSETS || {};
-
   // Llama a las funciones Loaded cuando sus respectivos videos terminan de cargar:
-  fuego = createVideo(assets.fuego || '../visual/fuego.mp4', fuegoLoaded);
+
+  fuego = createVideo('../visual/fuego.mp4', fuegoLoaded);
   fuego.size(tam);
   fuego.hide();
   fuego.loop();
   fuego.elt.muted = true;
 
-  agua = createVideo(assets.agua || '../visual/agua.mp4', aguaLoaded);
+  agua = createVideo('../visual/agua.mp4', aguaLoaded);
   agua.size(tam);
   agua.hide();
   agua.loop();
-  agua.elt.muted = true; // Corregido: era 'mutes'
+  agua.elt.mutes = true;
 
-  aire = createVideo(assets.aire || '../visual/aire.mp4', aireLoaded);
+  aire = createVideo('../visual/aire.mp4', aireLoaded);
   aire.size(tam);
   aire.hide();
   aire.loop();
   aire.elt.muted = true;
 
-  tierra = createVideo(assets.tierra || '../visual/tierra.mp4', tierraLoaded);
+  tierra = createVideo('../visual/tierra.mp4', tierraLoaded);
   tierra.size(tam);
   tierra.hide();
   tierra.loop();
@@ -73,14 +68,16 @@ function setup() {
   texturaActual2 = agua;
   texturaActual3 = aire;
   texturaActual4 = tierra;
+  // ---------------------------------------------------------------------------------
 
-  // Comentado para evitar autoplay issues - se activará con interacción
-  // audio.play();
-  // audio.loop();
+  // se loopea el audio de fondo.
+  audio.play();
+  audio.loop();
+
 }
 
 function fuegoLoaded() {
-  fuego.play();
+  fuego.play()
   fuego.loop();
 }
 
@@ -100,6 +97,8 @@ function tierraLoaded() {
 }
 
 function draw() {
+
+
   //dibuja los planes de fondo
   push();
   noStroke();
@@ -111,11 +110,12 @@ function draw() {
   push();
   noStroke();
   texture(pasto);
-  translate(-10, 150, 0);
-  plane(600, 300);
+  translate(-10, 150, 0)
+  plane(600, 300)
   pop();
 
   //dibuja las figuras
+
   push();
   noStroke();
   texture(texturaActual1);
@@ -153,27 +153,19 @@ function draw() {
   pop();
 
   //condición if si clickea el mouse para los cuadrados negros y blancos de fondo.
+
   if (mouseIsPressed) {
     image(negro, 0, 0, -600, 600);
     image(negro, 0, 0, 600, -600);
     image(blanco, 0, 0, 300, 300);
     image(blanco, 0, 0, -300, -300);
   }
+
 }
 
 //función click de mouse para que cambie el audio y cambien las texturas de las figuras entre ellas. 
+
 function mousePressed() {
-  // Inicia el audio context si no está iniciado
-  if (getAudioContext().state !== 'running') {
-    getAudioContext().resume();
-  }
-  
-  // Inicia el audio de fondo si no está reproduciéndose
-  if (!audio.isPlaying()) {
-    audio.play();
-    audio.loop();
-  }
-  
   audio1.play();
   audio.stop();
 
@@ -181,9 +173,11 @@ function mousePressed() {
   texturaActual2 = fuego;
   texturaActual3 = agua;
   texturaActual4 = aire;
+
 }
 
 //función para cuando suelta el click del mouse vuelve al primer audio y retomen sus texturas originales las figuras.
+
 function mouseReleased() {
   audio1.stop();
   audio.play();

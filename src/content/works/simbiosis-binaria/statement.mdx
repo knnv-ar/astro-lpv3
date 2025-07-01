@@ -10,13 +10,35 @@ category: ["2023 (Second semester)"]
 dependencies: ["p5", "p5.sound"]
 ---
 
-import boceto from '../simbiosis-binaria/sketch.js?url';
+import boceto from './sketch.js?url';
+import cieloVideo from './visual/cielo.mp4?url';
+import pastoVideo from './visual/pasto.mp4?url';
+import fuegoVideo from './visual/fuego.mp4?url';
+import aireVideo from './visual/aire.mp4?url';
+import aguaVideo from './visual/agua.mp4?url';
+import tierraVideo from './visual/tierra.mp4?url';
+import negroImg from './visual/negro.jpg?url';
+import blancoImg from './visual/blanco.png?url';
+import audioFile from './audio.mp3?url';
+import audio1File from './audio1.mp3?url';
 
 import Lienzo from '@components/Lienzo.astro';
 
 export const jsLoaded = boceto;
+export const assets = {
+  cielo: cieloVideo,
+  pasto: pastoVideo,
+  fuego: fuegoVideo,
+  aire: aireVideo,
+  agua: aguaVideo,
+  tierra: tierraVideo,
+  negro: negroImg,
+  blanco: blancoImg,
+  audio: audioFile,
+  audio1: audio1File
+};
 
-<Lienzo urlSketch={ boceto } ancho="600" alto="600" version="1.9.2"/>
+<Lienzo urlSketch={boceto} ancho="600" alto="600" version="1.9.2" assets={assets}/>
 
 OTRO {jsLoaded}
 
